@@ -1,7 +1,7 @@
 // Конфигурация Supabase (ЗАМЕНИТЕ НА СВОИ ДАННЫЕ!)
 const SUPABASE_CONFIG = {
-    url: 'https://ваш-проект.supabase.co', // Вставьте свой URL
-    anonKey: 'ваш-anon-key' // Вставьте свой anon key
+    url: 'https://scejfyvngsmjqsxvgewl.supabase.co', // Вставьте свой URL
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjZWpmeXZuZ3NtanFzeHZnZXdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2OTczMTEsImV4cCI6MjA4ODI3MzMxMX0.QxD-eQ8a5FXofemsB5KwI4yfFfcOWRfqhgaDI-6Z2ZI' // Вставьте свой anon key
 };
 
 // Конфигурация игры
