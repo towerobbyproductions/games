@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics+ | HD Admin Chaos Tower</title>
+  <meta name="description" content="Advanced analytics for HD Admin Chaos Tower - track player counts, records, and statistics">
 
+  <!-- Tailwind CSS (CDN, только для dev/demo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'roblox-dark': '#191B1D',
+            'roblox-dark-secondary': '#232527',
+            'roblox-blue': '#00A2FF'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-roblox-dark text-gray-900 dark:text-white transition-colors duration-200">
+  <nav class="bg-gray-100 dark:bg-roblox-dark-secondary shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <a href="../" class="text-2xl hover:text-roblox-blue transition-colors">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold">
+              <span class="text-roblox-blue">Analytics+</span>
+              <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">HD Admin Chaos Tower</span>
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <!-- Language Toggle -->
+          <button id="langToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium">
+            RU
+          </button>
+          <!-- Theme Toggle -->
+          <button id="themeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium">
+            🌙
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex justify-between items-center mb-6">
+      <div class="text-sm text-gray-500 dark:text-gray-400">
+        <span data-lang-en="Last update:" data-lang-ru="Последнее обновление:">Last update:</span>
+        <span id="lastUpdate" class="font-mono ml-1">--:--:--</span>
+      </div>
+      <button id="refreshData" class="px-4 py-2 bg-roblox-blue hover:bg-blue-600 text-white rounded-lg transition-colors text-sm font-medium">
+        <i class="fas fa-sync-alt mr-2"></i>
+        <span data-lang-en="Refresh" data-lang-ru="Обновить">Refresh</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-gray-500 dark:text-gray-400" data-lang-en="Current Online" data-lang-ru="Сейчас в игре">Current Online</span>
+          <i class="fas fa-users text-roblox-blue text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold" id="currentOnline">-</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          <span data-lang-en="Daily record:" data-lang-ru="Рекорд дня:">Daily record:</span>
+          <span id="dailyRecord" class="font-semibold text-yellow-500 ml-1">-</span>
+        </div>
+      </div>
+
+      <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-gray-500 dark:text-gray-400" data-lang-en="All Time Peak" data-lang-ru="Абсолютный рекорд">All Time Peak</span>
+          <i class="fas fa-trophy text-yellow-500 text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold" id="allTimePeak">-</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2" id="peakDate">-</div>
+      </div>
+
+      <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-gray-500 dark:text-gray-400" data-lang-en="Total Visits" data-lang-ru="Всего посещений">Total Visits</span>
+          <i class="fas fa-chart-line text-green-500 text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold" id="totalVisits">-</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          <span data-lang-en="Today:" data-lang-ru="Сегодня:">Today:</span>
+          <span id="todayVisits" class="font-semibold ml-1">-</span>
+        </div>
+      </div>
+
+      <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-gray-500 dark:text-gray-400" data-lang-en="Favorites" data-lang-ru="Избранное">Favorites</span>
+          <i class="fas fa-heart text-red-500 text-xl"></i>
+        </div>
+        <div class="text-3xl font-bold" id="favorites">-</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          <span data-lang-en="Growth:" data-lang-ru="Рост:">Growth:</span>
+          <span id="favoritesGrowth" class="font-semibold text-green-500 ml-1">+0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+      <div class="lg:col-span-2 bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold" data-lang-en="Player Activity (24h)" data-lang-ru="Активность игроков (24ч)">Player Activity (24h)</h2>
+          <div class="flex gap-2">
+            <button class="chart-type-btn active px-3 py-1 text-sm rounded-lg bg-roblox-blue text-white" data-type="line">
+              <i class="fas fa-chart-line"></i>
+            </button>
+            <button class="chart-type-btn px-3 py-1 text-sm rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" data-type="bar">
+              <i class="fas fa-chart-bar"></i>
+            </button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="onlineChart"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <h2 class="text-lg font-semibold mb-4" data-lang-en="Peak Hours" data-lang-ru="Пиковые часы">Peak Hours</h2>
+        <div class="space-y-3" id="peakHours">
+          <div class="loading-chart">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <h2 class="text-lg font-semibold mb-4" data-lang-en="Weekly Comparison" data-lang-ru="Сравнение по неделям">Weekly Comparison</h2>
+        <div class="chart-container">
+          <canvas id="weeklyChart"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+        <h2 class="text-lg font-semibold mb-4" data-lang-en="Weekday Distribution" data-lang-ru="Распределение по дням">Weekday Distribution</h2>
+        <div class="chart-container">
+          <canvas id="weekdayChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+      <h2 class="text-lg font-semibold mb-4" data-lang-en="Record History" data-lang-ru="История рекордов">Record History</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-gray-300 dark:border-gray-700">
+              <th class="text-left py-3 px-4" data-lang-en="Date" data-lang-ru="Дата">Date</th>
+              <th class="text-left py-3 px-4" data-lang-en="Record Type" data-lang-ru="Тип рекорда">Record Type</th>
+              <th class="text-left py-3 px-4" data-lang-en="Value" data-lang-ru="Значение">Value</th>
+              <th class="text-left py-3 px-4" data-lang-en="Previous Record" data-lang-ru="Предыдущий рекорд">Previous Record</th>
+            </tr>
+          </thead>
+          <tbody id="recordsTable">
+            <tr>
+              <td colspan="4" class="text-center py-4 text-gray-500">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Supabase и наш скрипт (только один раз!) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
