@@ -43,29 +43,24 @@ html, body {
 }
 
 /* links */
-a {
-  color: var(--roblox-blue);
-  text-decoration: none;
+a { color: var(--roblox-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* experiences grid: adaptive so cards get more room on wide screens */
+#experiencesGrid{
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* cards min 320px, grow to fill */
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* avatar */
+/* avatar / about */
 #communityAvatar{
   border-radius:12px;
   background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
 }
-
-/* about section */
-#aboutSection{
-  background: var(--card-bg);
-  color: inherit;
-}
+#aboutSection{ background: var(--card-bg); color: inherit; }
 
 /* EXPERIENCE CARD */
-
 .exp-card{
   background: var(--card-bg);
   color: inherit;
@@ -76,19 +71,17 @@ a:hover {
   align-items: center;
   text-decoration: none;
   transition: transform .18s ease, box-shadow .18s ease;
-  min-height: 90px;
+  min-height: 92px;
 }
-
 .exp-card:hover{
   transform: translateY(-6px);
   box-shadow: 0 18px 35px -12px rgba(0,0,0,0.18), 0 8px 12px -10px rgba(0,0,0,0.06);
 }
 
 /* thumbnail */
-
 .exp-thumb{
-  width:90px;
-  height:90px;
+  width:84px;
+  height:84px;
   border-radius:10px;
   object-fit:cover;
   flex-shrink:0;
@@ -96,21 +89,17 @@ a:hover {
 }
 
 /* text container */
+.exp-info{ flex:1 1 auto; min-width:0; }
 
-.exp-info{
-  flex:1;
-  min-width:0;
-}
-
-/* title */
-
+/* title: allow up to 3 lines */
 .exp-title{
   font-weight:600;
   color: inherit;
-  line-height:1.2;
+  line-height:1.16;
+  font-size:1.04rem;
 
   display:-webkit-box;
-  -webkit-line-clamp:2;
+  -webkit-line-clamp:3;        /* теперь 3 строки */
   -webkit-box-orient:vertical;
 
   overflow:hidden;
@@ -118,24 +107,31 @@ a:hover {
   word-break:break-word;
 }
 
-/* meta */
+/* price element (вынесена из заголовка) */
+.exp-price{
+  color: var(--muted);
+  font-weight:500;
+  margin-right:6px;
+  white-space:nowrap;
+  font-size:0.95rem;
+}
 
+/* meta */
 .exp-meta{
   font-size:0.9rem;
   color: var(--muted);
+  margin-top:6px;
 }
 
-/* meta flex fix */
-
+/* meta flex fix: allow wrap */
 .exp-meta .flex{
   display:flex;
   flex-wrap:wrap;
-  gap:6px;
+  gap:8px;
   align-items:center;
 }
 
 /* rating */
-
 .exp-rating{
   display:inline-block;
   padding:4px 8px;
@@ -146,7 +142,6 @@ a:hover {
 }
 
 /* buttons */
-
 button, .inline-control{
   background: var(--card-bg);
   color: inherit;
@@ -156,40 +151,26 @@ button, .inline-control{
 }
 
 /* scrollbar */
-
-::-webkit-scrollbar{
-  width:10px;
-}
-
-::-webkit-scrollbar-track{
-  background: var(--card-bg);
-}
-
-::-webkit-scrollbar-thumb{
-  background: rgba(0,0,0,0.35);
-  border-radius:5px;
-}
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background: var(--card-bg); }
+::-webkit-scrollbar-thumb{ background: rgba(0,0,0,0.35); border-radius:5px; }
 
 /* responsive */
-
-@media (max-width:640px){
-
-  .exp-thumb{
-    width:72px;
-    height:72px;
-  }
-
-  .exp-card{
-    padding:12px;
-  }
-
+@media (max-width:900px){
+  #experiencesGrid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .exp-thumb{ width:72px; height:72px; }
+  .exp-title{ font-size:1rem; -webkit-line-clamp:3; }
+  .exp-card{ min-height:84px; padding:12px; gap:12px; }
 }
 
-@media (min-width:1024px){
+@media (max-width:480px){
+  /* leave in-row layout but slightly smaller thumb */
+  .exp-thumb{ width:64px; height:64px; }
+  .exp-title{ font-size:0.98rem; -webkit-line-clamp:3; }
+  .exp-card{ min-height:80px; padding:10px; gap:10px; }
+}
 
-  .exp-thumb{
-    width:100px;
-    height:100px;
-  }
-
+@media (min-width:1200px){
+  .exp-thumb{ width:100px; height:100px; }
+  .exp-card{ min-height:110px; }
 }
