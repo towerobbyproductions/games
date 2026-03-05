@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roblox Game - HD Admin Chaos Tower</title>
-    
+
     <!-- Meta теги для SEO -->
     <meta name="description" content="Play HD Admin Chaos Tower on Roblox - an exciting admin game with chaos gameplay">
     <meta name="keywords" content="roblox, game, admin, chaos, tower, hd admin chaos tower">
     <meta name="author" content="Tower Robby Productions">
-    
-    <!-- Open Graph для соцсетей -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content="HD Admin Chaos Tower - Roblox Game">
     <meta property="og:description" content="Play HD Admin Chaos Tower on Roblox">
     <meta property="og:image" content="https://tr.rbxcdn.com/180DAY-ac99810b043fcc8b90d47a062764b279/768/432/Image/Webp/noFilter">
     <meta property="og:url" content="https://towerobbyproductions.github.io/games/71240146627158/HD-Admin-Chaos-Tower/">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HD Admin Chaos Tower - Roblox Game">
     <meta name="twitter:description" content="Play HD Admin Chaos Tower on Roblox">
     <meta name="twitter:image" content="https://tr.rbxcdn.com/180DAY-ac99810b043fcc8b90d47a062764b279/768/432/Image/Webp/noFilter">
-    
-    <!-- Favicon (рекомендую добавить) -->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Наш CSS -->
+
+    <!-- Ваш отдельный CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -51,146 +51,143 @@
     </script>
 </head>
 
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMD2XJLJYW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CMD2XJLJYW');
 </script>
-   
-    <body class="bg-white dark:bg-roblox-dark text-gray-900 dark:text-white transition-colors duration-200">
-    <div class="min-h-screen">
-        <!-- Header -->
-        <header class="bg-gray-100 dark:bg-roblox-dark-secondary shadow-md">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div class="flex justify-between items-center">
+
+<body class="bg-white dark:bg-roblox-dark text-gray-900 dark:text-white transition-colors duration-200">
+<div class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-100 dark:bg-roblox-dark-secondary shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div>
                     <h1 id="gameTitle" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                         Loading...
                     </h1>
-                    <div class="flex gap-3">
-                        <!-- Language Toggle -->
-                        <button id="langToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium text-sm sm:text-base">
-                            RU
-                        </button>
-                        <!-- Theme Toggle -->
-                        <button id="themeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium text-sm sm:text-base">
-                            🌙
-                        </button>
+                    <!-- Owner line -->
+                    <div class="owner-line mt-1">
+                        By <a id="ownerLink" href="https://towerobbyproductions.github.io/games/communities/102552180%20/Tower-Obby-Productions/" target="_blank" rel="noopener noreferrer">Tower Obby Productions</a>
                     </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <!-- Language Toggle -->
+                    <button id="langToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium text-sm sm:text-base">
+                        RU
+                    </button>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium text-sm sm:text-base">
+                        🌙
+                    </button>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Main Content -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Left Column: Slider + Description -->
-                <div class="space-y-6">
-                    <!-- Image Slider -->
-                    <div class="slider-container bg-gray-200 dark:bg-roblox-dark-secondary">
-                        <div class="slider-wrapper" id="sliderWrapper">
-                            <img src="https://tr.rbxcdn.com/180DAY-ac99810b043fcc8b90d47a062764b279/768/432/Image/Webp/noFilter?auto=compress&cs=tinysrgb&w=1200" 
-                                 alt="HD Admin Chaos Tower Screenshot 1" 
-                                 class="slider-image h-64 sm:h-80 lg:h-96"
-                                 loading="lazy">
-                            <img src="https://tr.rbxcdn.com/180DAY-0319103f58ead123c482d498a9ad2494/768/432/Image/Webp/noFilter?auto=compress&cs=tinysrgb&w=1200" 
-                                 alt="HD Admin Chaos Tower Screenshot 2" 
-                                 class="slider-image h-64 sm:h-80 lg:h-96"
-                                 loading="lazy">
-                        </div>
-                        <button class="slider-button prev" onclick="changeSlide(-1)" aria-label="Previous slide">‹</button>
-                        <button class="slider-button next" onclick="changeSlide(1)" aria-label="Next slide">›</button>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column: Slider + Description -->
+            <div class="space-y-6">
+                <!-- Image Slider -->
+                <div class="slider-container bg-gray-200 dark:bg-roblox-dark-secondary">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <!-- JS will inject images here -->
                     </div>
-
-                    <!-- Description -->
-                    <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
-                        <h2 class="text-xl font-semibold mb-3" data-lang-en="Description" data-lang-ru="Описание">Description</h2>
-                        <p id="gameDescription" class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                            Loading game description...
-                        </p>
-                    </div>
+                    <button class="slider-button prev" onclick="changeSlide(-1)" aria-label="Previous slide">‹</button>
+                    <button class="slider-button next" onclick="changeSlide(1)" aria-label="Next slide">›</button>
                 </div>
 
-                <!-- Right Column: Play Button + Stats -->
-                <div class="space-y-6">
-                    <!-- Play Now Button -->
-                    <a id="playLink" href="https://www.roblox.com/games/71240146627158/" target="_blank" rel="noopener noreferrer" class="block">
-                        <button class="w-full bg-roblox-blue hover:bg-blue-600 text-white font-bold py-6 px-8 rounded-xl text-2xl shadow-lg transition-all transform hover:scale-105">
-                            <span data-lang-en="▶ Play Now" data-lang-ru="▶ Играть сейчас">▶ Play Now</span>
-                        </button>
-                    </a>
-
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <!-- Active Players -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Active" data-lang-ru="Активных">Active</div>
-                            <div id="activePlayers" class="text-2xl font-bold text-roblox-blue">-</div>
-                        </div>
-
-                        <!-- Favorites -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Favorites" data-lang-ru="Избранное">Favorites</div>
-                            <div id="favorites" class="text-2xl font-bold text-yellow-500">-</div>
-                        </div>
-
-                        <!-- Visits -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Visits" data-lang-ru="Посещений">Visits</div>
-                            <div id="visits" class="text-2xl font-bold text-green-500">-</div>
-                        </div>
-
-                        <!-- Server Size -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Server Size" data-lang-ru="Размер сервера">Server Size</div>
-                            <div id="serverSize" class="text-2xl font-bold text-purple-500">-</div>
-                        </div>
-
-                        <!-- Voice Chat -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Voice Chat" data-lang-ru="Голосовой чат">Voice Chat</div>
-                            <div class="text-lg font-semibold text-roblox-blue" data-lang-en="Supported" data-lang-ru="Поддерживается">Supported</div>
-                        </div>
-
-                        <!-- Camera -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Camera" data-lang-ru="Камера">Camera</div>
-                            <div class="text-lg font-semibold text-roblox-blue" data-lang-en="Supported" data-lang-ru="Поддерживается">Supported</div>
-                        </div>
-
-                        <!-- Created -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md col-span-2">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Created" data-lang-ru="Создано">Created</div>
-                            <div id="created" class="text-lg font-semibold">-</div>
-                        </div>
-
-                        <!-- Updated -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md col-span-2">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Updated" data-lang-ru="Обновлено">Updated</div>
-                            <div id="updated" class="text-lg font-semibold">-</div>
-                        </div>
-
-                        <!-- Genre -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Genre" data-lang-ru="Жанр">Genre</div>
-                            <div id="genre" class="text-lg font-semibold">-</div>
-                        </div>
-
-                        <!-- Subgenre -->
-                        <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
-                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Subgenre" data-lang-ru="Поджанр">Subgenre</div>
-                            <div id="subgenre" class="text-lg font-semibold">-</div>
-                        </div>
-                    </div>
+                <!-- Description -->
+                <div class="bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-semibold mb-3" data-lang-en="Description" data-lang-ru="Описание">Description</h2>
+                    <p id="gameDescription" class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Loading game description...
+                    </p>
                 </div>
             </div>
-        </main>
-    </div>
 
-    <!-- Подключаем JavaScript -->
-    <script src="js/script.js"></script>
+            <!-- Right Column: Play Button + Stats -->
+            <div class="space-y-6">
+                <!-- Play Now Button -->
+                <a id="playLink" href="https://www.roblox.com/games/71240146627158/" target="_blank" rel="noopener noreferrer" class="block">
+                    <button class="w-full bg-roblox-blue hover:bg-blue-600 text-white font-bold py-6 px-8 rounded-xl text-2xl shadow-lg transition-all transform hover:scale-105">
+                        <span data-lang-en="▶ Play Now" data-lang-ru="▶ Играть сейчас">▶ Play Now</span>
+                    </button>
+                </a>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- (оставлены все ваши stat-карточки) -->
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Active" data-lang-ru="Активных">Active</div>
+                        <div id="activePlayers" class="text-2xl font-bold text-roblox-blue">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Favorites" data-lang-ru="Избранное">Favorites</div>
+                        <div id="favorites" class="text-2xl font-bold text-yellow-500">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Visits" data-lang-ru="Посещений">Visits</div>
+                        <div id="visits" class="text-2xl font-bold text-green-500">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Server Size" data-lang-ru="Размер сервера">Server Size</div>
+                        <div id="serverSize" class="text-2xl font-bold text-purple-500">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Voice Chat" data-lang-ru="Голосовой чат">Voice Chat</div>
+                        <div class="text-lg font-semibold text-roblox-blue" data-lang-en="Supported" data-lang-ru="Поддерживается">Supported</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Camera" data-lang-ru="Камера">Camera</div>
+                        <div class="text-lg font-semibold text-roblox-blue" data-lang-en="Supported" data-lang-ru="Поддерживается">Supported</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md col-span-2">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Created" data-lang-ru="Создано">Created</div>
+                        <div id="created" class="text-lg font-semibold">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md col-span-2">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Updated" data-lang-ru="Обновлено">Updated</div>
+                        <div id="updated" class="text-lg font-semibold">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Genre" data-lang-ru="Жанр">Genre</div>
+                        <div id="genre" class="text-lg font-semibold">-</div>
+                    </div>
+
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Subgenre" data-lang-ru="Поджанр">Subgenre</div>
+                        <div id="subgenre" class="text-lg font-semibold">-</div>
+                    </div>
+
+                    <!-- Maturity -->
+                    <div class="stat-card bg-gray-100 dark:bg-roblox-dark-secondary rounded-xl p-4 shadow-md col-span-2">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-1" data-lang-en="Maturity" data-lang-ru="Возрастной рейтинг">Maturity</div>
+                        <div id="maturity" class="text-lg font-semibold"><span class="maturity-badge">-</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Ваш отдельный JS -->
+<script src="js/script.js"></script>
 </body>
 </html>
