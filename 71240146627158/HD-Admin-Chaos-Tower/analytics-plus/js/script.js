@@ -463,4 +463,11 @@ function showError(message) {
 }
 
 function startAutoUpdate() {
-    updateInterval =
+    updateInterval = setInterval(() => loadAllData(), 300000); // 5 минут
+}
+
+// ========== ДЛЯ РАЗРАБОТКИ ==========
+// Генерируем тестовые данные
+function generateTestData() {
+    // Эта функция будет полезна для тестирования
+}
