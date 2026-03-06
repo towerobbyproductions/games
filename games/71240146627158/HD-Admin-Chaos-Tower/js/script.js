@@ -211,7 +211,7 @@ function updateUI(gameData) {
     const ownerLink = document.getElementById('ownerLink');
     if (ownerLink) {
         ownerLink.textContent = 'Tower Obby Productions';
-        ownerLink.href = 'https://towerobbyproductions.github.io/games/communities/102552180/Tower-Obby-Productions/';
+        ownerLink.href = 'https://towerobbyproductions.github.io/communities/102552180/Tower-Obby-Productions/';
     }
 
     // Maturity with fallback
@@ -324,3 +324,4 @@ function setupEventListeners() {
 // Экспортируем функции для глобального доступа (для onclick в HTML)
 
 window.changeSlide = changeSlide;
+
