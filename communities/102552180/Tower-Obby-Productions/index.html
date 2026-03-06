@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tower Obby Productions — Community</title>
 
+  <!-- SEO и мета-теги (Open Graph) -->
+  <meta name="description" content="Official community page of Tower Obby Productions. Join 84,000+ members and explore our top-rated Roblox experiences.">
+  <meta name="keywords" content="roblox, community, tower obby productions, roblox group, tower obby, chaos tower">
+  <meta property="og:site_name" content="Tower Obby Productions">
+  <meta property="og:title" content="Tower Obby Productions — Community">
+  <meta property="og:description" content="Join our Roblox community and stay updated on our latest games and events. Over 84k members strong!">
+  <meta property="og:image" content="https://tr.rbxcdn.com/180DAY-a96d76930a4b8fd8835dfb3715d21838/150/150/Image/Webp/noFilter">
+  <meta property="og:url" content="https://towerobbyproductions.github.io">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
   <!-- Prevent theme flash: set theme (dark by default) on html element -->
   <script>
     (function(){
       try {
-        const stored = localStorage.getItem('theme'); // 'dark' or 'light'
+        const stored = localStorage.getItem('theme');
         const theme = stored || 'dark';
-        // ensure exactly one of classes 'dark' or 'light' is present
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
           document.documentElement.classList.remove('light');
@@ -19,7 +29,6 @@
           document.documentElement.classList.add('light');
           document.documentElement.classList.remove('dark');
         }
-
         const lang = localStorage.getItem('siteLang') || 'en';
         document.documentElement.lang = lang;
         window.__SITE_LANG = lang;
@@ -27,15 +36,17 @@
     })();
   </script>
 
-  <!-- Tailwind (layout only) -->
+  <!-- Tailwind, Fonts & Styles -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-    <!-- Favicon -->
-   <link rel="icon" type="image/x-icon" href="https://towerobbyproductions.github.io/site/assets/icon/favicon64%D1%8564.ico">
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://towerobbyproductions.github.io/site/assets/icon/favicon64%D1%8564.ico">
 </head>
+
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMD2XJLJYW"></script>
